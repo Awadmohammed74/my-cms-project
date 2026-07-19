@@ -46,10 +46,10 @@ function Settings() {
   const isGoogleUser = providerData === "google.com";
   const createdAt = user?.metadata?.creationTime
     ? new Date(user.metadata.creationTime).toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      })
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
     : "N/A";
 
   const handleSaveProfile = async (e) => {
@@ -210,11 +210,16 @@ function Settings() {
                 <label className="block text-sm font-semibold text-slate-700 mb-1.5">
                   Email Address
                 </label>
-                <div className="flex items-center gap-2 px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-500">
+                <div className="flex items-center gap-2 px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-500 w-full overflow-hidden">
+                  {/* الأيقونة */}
                   <Mail className="w-4 h-4 text-slate-400 shrink-0" />
-                  <span>{displayEmail}</span>
+
+                  {/* الإيميل - مع خاصية truncate عشان لو الإيميل طويل ما يكسرش التصميم */}
+                  <span className="truncate">{displayEmail}</span>
+
+                  {/* الـ Badge */}
                   {isGoogleUser && (
-                    <span className="ml-auto text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full border border-indigo-100">
+                    <span className="ml-auto shrink-0 text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full border border-indigo-100">
                       Google
                     </span>
                   )}
