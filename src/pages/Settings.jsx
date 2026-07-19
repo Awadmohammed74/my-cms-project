@@ -226,7 +226,7 @@ function Settings() {
                 <button
                   type="submit"
                   disabled={saving}
-                  className="flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition-all cursor-pointer disabled:opacity-60 shadow-sm"
+                  className="flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-xl hover:bg-indigo-700 active:scale-[0.98] transition-all cursor-pointer disabled:opacity-60 shadow-sm w-full sm:w-auto"
                 >
                   {saving ? (
                     <Loader2 className="w-4 h-4 animate-spin" />
@@ -346,7 +346,7 @@ function Settings() {
                     type="button"
                     onClick={handleChangePassword}
                     disabled={saving}
-                    className="flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition-all cursor-pointer disabled:opacity-60 shadow-sm"
+                    className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition-all cursor-pointer disabled:opacity-60 shadow-sm w-full sm:w-auto"
                   >
                     {saving ? (
                       <Loader2 className="w-4 h-4 animate-spin" />

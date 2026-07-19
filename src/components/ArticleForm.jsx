@@ -235,34 +235,38 @@ function ArticleForm({ onPublish, loading, initialData }) {
             </button>
 
             <div className="flex items-center gap-3 w-full sm:w-auto justify-end">
-              <button
-                type="button"
-                onClick={(e) => handleSubmit(e, "draft")}
-                disabled={loading}
-                className="flex cursor-pointer items-center justify-center gap-2 px-5 py-2.5 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-xl hover:bg-slate-50 hover:border-slate-300 transition-all duration-200 shadow-sm"
-              >
-                <FileText className="w-4 h-4 text-slate-400" /> Save Draft
-              </button>
+              <div className="flex flex-col-reverse sm:flex-row items-center gap-3 w-full mt-6">
+                {/* زر Save Draft */}
+                <button
+                  type="button"
+                  onClick={(e) => handleSubmit(e, "draft")}
+                  disabled={loading}
+                  className="flex cursor-pointer items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-xl hover:bg-slate-50 hover:border-slate-300 transition-all duration-200 shadow-sm w-full sm:w-auto"
+                >
+                  <FileText className="w-4 h-4 text-slate-400" /> Save Draft
+                </button>
 
-              <button
-                type="button"
-                onClick={(e) => handleSubmit(e, "published")}
-                disabled={loading}
-                className="flex cursor-pointer items-center justify-center gap-2 px-6 py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-xl hover:bg-indigo-700 active:scale-[0.98] transition-all duration-200 shadow-md shadow-indigo-500/10"
-              >
-                {loading ? (
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                ) : (
-                  <Send className="w-4 h-4" />
-                )}
-                {loading
-                  ? initialData
-                    ? "Updating..."
-                    : "Publishing..."
-                  : initialData
-                    ? "Update Article"
-                    : "Publish Article"}
-              </button>
+                {/* زر Publish/Update */}
+                <button
+                  type="button"
+                  onClick={(e) => handleSubmit(e, "published")}
+                  disabled={loading}
+                  className="flex cursor-pointer items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-xl hover:bg-indigo-700 active:scale-[0.98] transition-all duration-200 shadow-md shadow-indigo-500/10 w-full sm:w-auto"
+                >
+                  {loading ? (
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                  ) : (
+                    <Send className="w-4 h-4" />
+                  )}
+                  {loading
+                    ? initialData
+                      ? "Updating..."
+                      : "Publishing..."
+                    : initialData
+                      ? "Update Article"
+                      : "Publish Article"}
+                </button>
+              </div>
             </div>
           </div>
         </form>
