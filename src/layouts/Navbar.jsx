@@ -94,7 +94,7 @@ function Navbar({ onMenuClick }) {
             {/* Desktop Search */}
             <div
               ref={searchRef}
-              className="relative hidden sm:block w-80 lg:w-96"
+              className="relative hidden sm:block w-72 lg:w-80"
             >
               <Search
                 size={18}
