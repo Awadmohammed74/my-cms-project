@@ -49,6 +49,9 @@ function ArticlesSection() {
     (opt) => opt.value === sortBy,
   )?.label;
 
+  // Helper to get article link (slug or id)
+  const getArticleLink = (article) => article?.seo?.slug || article?.id;
+
   const filteredAndSorted = articles
     .filter((article) => {
       if (statusFilter === "published") {
@@ -297,7 +300,9 @@ function ArticlesSection() {
                       <div className="flex gap-2">
                         <button
                           onClick={() =>
-                            navigate(`/articles/view/${article.id}`)
+                            navigate(
+                              `/articles/view/${getArticleLink(article)}`,
+                            )
                           }
                           className="p-1.5 text-slate-500 hover:text-indigo-600 rounded-md hover:bg-slate-100 transition-colors cursor-pointer"
                           title="View article"
@@ -428,7 +433,9 @@ function ArticlesSection() {
                         <div className="flex justify-center gap-2 sm:gap-3">
                           <button
                             onClick={() =>
-                              navigate(`/articles/view/${article.id}`)
+                              navigate(
+                                `/articles/view/${getArticleLink(article)}`,
+                              )
                             }
                             className="p-1 sm:p-1.5 text-slate-500 hover:text-indigo-600 rounded-md hover:bg-slate-100 transition-colors cursor-pointer"
                             title="View article"

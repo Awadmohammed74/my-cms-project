@@ -14,6 +14,9 @@ import { useApp } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
 import ConfirmModal from "../components/ConfirmModal";
 
+// Helper to get article link (slug or id)
+const getArticleLink = (article) => article?.seo?.slug || article?.id;
+
 function Navbar({ onMenuClick }) {
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
   const [showSearchResults, setShowSearchResults] = useState(false);
@@ -27,15 +30,15 @@ function Navbar({ onMenuClick }) {
 
   const searchResults = localSearch.trim()
     ? articles
-      .filter((a) => {
-        const q = localSearch.toLowerCase();
-        return (
-          a.title?.toLowerCase().includes(q) ||
-          a.author?.toLowerCase().includes(q) ||
-          a.category?.toLowerCase().includes(q)
-        );
-      })
-      .slice(0, 6)
+        .filter((a) => {
+          const q = localSearch.toLowerCase();
+          return (
+            a.title?.toLowerCase().includes(q) ||
+            a.author?.toLowerCase().includes(q) ||
+            a.category?.toLowerCase().includes(q)
+          );
+        })
+        .slice(0, 6)
     : [];
 
   useEffect(() => {
@@ -141,7 +144,9 @@ function Navbar({ onMenuClick }) {
                         <div
                           key={article.id}
                           onClick={() => {
-                            navigate(`/articles/view/${article.id}`);
+                            navigate(
+                              `/articles/view/${article.seo?.slug || article.id}`,
+                            );
                             handleClearSearch();
                           }}
                           className="flex items-center gap-3 px-4 py-3 hover:bg-indigo-50/40 cursor-pointer transition-colors border-b border-slate-50 last:border-b-0"
@@ -237,7 +242,9 @@ function Navbar({ onMenuClick }) {
                         <div
                           key={article.id}
                           onClick={() => {
-                            navigate(`/articles/view/${article.id}`);
+                            navigate(
+                              `/articles/view/${article.seo?.slug || article.id}`,
+                            );
                             handleClearSearch();
                           }}
                           className="flex items-center gap-3 px-4 py-3 hover:bg-indigo-50 cursor-pointer transition-colors border-b border-slate-50 last:border-b-0"

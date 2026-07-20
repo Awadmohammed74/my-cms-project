@@ -6,6 +6,9 @@ function Activity() {
   const navigate = useNavigate();
   const { articles, articlesLoading: loading } = useApp();
 
+  // Helper to get article link (slug or id)
+  const getArticleLink = (article) => article?.seo?.slug || article?.id;
+
   const recentArticles = [...articles]
     .sort((a, b) => {
       const dateA = a.createdAt?.toDate?.() || new Date(0);
@@ -111,7 +114,9 @@ function Activity() {
             return (
               <div
                 key={article.id}
-                onClick={() => navigate(`/articles/view/${article.id}`)}
+                onClick={() =>
+                  navigate(`/articles/view/${getArticleLink(article)}`)
+                }
                 className="flex items-start gap-3 sm:gap-4 px-4 sm:px-5 py-4 transition-all cursor-pointer hover:bg-slate-50 active:bg-slate-100 border-b border-slate-100 last:border-b-0"
               >
                 {/* Icon */}
