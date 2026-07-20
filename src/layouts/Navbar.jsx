@@ -27,15 +27,15 @@ function Navbar({ onMenuClick }) {
 
   const searchResults = localSearch.trim()
     ? articles
-        .filter((a) => {
-          const q = localSearch.toLowerCase();
-          return (
-            a.title?.toLowerCase().includes(q) ||
-            a.author?.toLowerCase().includes(q) ||
-            a.category?.toLowerCase().includes(q)
-          );
-        })
-        .slice(0, 6)
+      .filter((a) => {
+        const q = localSearch.toLowerCase();
+        return (
+          a.title?.toLowerCase().includes(q) ||
+          a.author?.toLowerCase().includes(q) ||
+          a.category?.toLowerCase().includes(q)
+        );
+      })
+      .slice(0, 6)
     : [];
 
   useEffect(() => {
@@ -94,7 +94,7 @@ function Navbar({ onMenuClick }) {
             {/* Desktop Search */}
             <div
               ref={searchRef}
-              className="relative hidden sm:block w-72 lg:w-80"
+              className="relative hidden sm:block w-72 lg:w-74"
             >
               <Search
                 size={18}
