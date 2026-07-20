@@ -209,7 +209,7 @@ function Navbar({ onMenuClick }) {
                   type="text"
                   value={localSearch}
                   onChange={handleSearchChange}
-                  placeholder="Search articles..."
+                  placeholder="Search articles, authors, categories..."
                   className="w-full rounded-lg border border-slate-300 bg-slate-50 py-2.5 pl-10 pr-10 text-sm text-slate-700 placeholder:text-slate-400 outline-none"
                   autoFocus
                 />
