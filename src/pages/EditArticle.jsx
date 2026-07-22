@@ -4,7 +4,6 @@ import { createPortal } from "react-dom";
 import { doc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
 import { db } from "../firebase/config";
 import { useAuth } from "../context/AuthContext";
-import Breadcrumb from "../components/Breadcrumb";
 import BreadcrumbHeader from "../components/BreadcrumbHeader";
 import ArticleForm from "../components/ArticleForm";
 import ImageUploader from "../components/ImageUploader";

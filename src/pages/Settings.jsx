@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { auth } from "../firebase/config";
 import {
@@ -37,19 +37,14 @@ function Settings() {
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
 
   const displayEmail = user?.email || "No email available";
-  const [avatarSrc, setAvatarSrc] = useState(
-    user?.displayName
-      ? `https://ui-avatars.com/api/?name=${encodeURIComponent(user.displayName)}&background=4f46e5&color=fff&size=200`
-      : `https://ui-avatars.com/api/?name=User&background=4f46e5&color=fff&size=200`,
-  );
   const providerData = user?.providerData?.[0]?.providerId || "password";
   const isGoogleUser = providerData === "google.com";
   const createdAt = user?.metadata?.creationTime
     ? new Date(user.metadata.creationTime).toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    })
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
     : "N/A";
 
   const handleSaveProfile = async (e) => {
@@ -181,14 +176,14 @@ function Settings() {
                 <img
                   src={
                     user?.providerData?.[0]?.photoURL ||
-                    `https://ui-avatars.com/api/?name=${encodeURIComponent(user?.displayName || "User")}&background=4f46e5&color=fff&size=200`
+                    `https://ui-avatars.com/api/?name=${encodeURIComponent(user?.displayName || "HR")}&background=4f46e5&color=fff&size=200`
                   }
                   alt={displayName || "User"}
                   className="w-16 h-16 rounded-full object-cover border-2 border-slate-200"
                   referrerPolicy="no-referrer"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName || "User")}&background=4f46e5&color=fff&size=200`;
+                    e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName || "HR")}&background=4f46e5&color=fff&size=200`;
                   }}
                 />
                 <div className="flex-1">
@@ -386,7 +381,7 @@ function Settings() {
                 <img
                   src={
                     user?.providerData?.[0]?.photoURL ||
-                    `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName || "User")}&background=4f46e5&color=fff&size=200`
+                    `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName || "HR")}&background=4f46e5&color=fff&size=200`
                   }
                   alt={displayName || "User"}
                   className="w-20 h-20 rounded-full object-cover border-4 border-indigo-100 mb-3"

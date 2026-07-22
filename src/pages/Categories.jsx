@@ -10,7 +10,6 @@ import {
   Loader2,
   Sparkles,
   Hash,
-  Trash2,
   AlertTriangle,
 } from "lucide-react";
 

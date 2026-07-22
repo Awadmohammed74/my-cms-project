@@ -14,9 +14,6 @@ import { useApp } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
 import ConfirmModal from "../components/ConfirmModal";
 
-// Helper to get article link (slug or id)
-const getArticleLink = (article) => article?.seo?.slug || article?.id;
-
 function Navbar({ onMenuClick }) {
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
   const [showSearchResults, setShowSearchResults] = useState(false);
@@ -78,7 +75,7 @@ function Navbar({ onMenuClick }) {
     user?.displayName || user?.email?.split("@")[0] || "Admin";
   const photoURL =
     user?.photoURL ||
-    "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&w=200&q=80";
+    `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName || "User")}&background=4f46e5&color=fff&size=200`;
   const email = user?.email || "admin@procms.com";
 
   return (
@@ -301,6 +298,10 @@ function Navbar({ onMenuClick }) {
                 src={photoURL}
                 alt={displayName}
                 className="h-8 w-8 sm:h-9 sm:w-9 rounded-full object-cover border-2 border-slate-200"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName || "User")}&background=4f46e5&color=fff&size=200`;
+                }}
               />
               <button
                 onClick={() => setShowLogoutConfirm(true)}

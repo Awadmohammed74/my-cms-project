@@ -14,7 +14,7 @@ import ConfirmModal from "../components/ConfirmModal";
 
 function Sidebar({ isOpen, setIsOpen }) {
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
-  const { user, logout } = useAuth();
+  const { logout } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = async () => {
