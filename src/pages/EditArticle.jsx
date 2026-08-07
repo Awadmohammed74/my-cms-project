@@ -11,7 +11,7 @@ import PublishSetting from "../components/PublishSetting";
 import Toast from "../components/Toast";
 import ConfirmModal from "../components/ConfirmModal";
 import { Trash2 } from "lucide-react";
-import { uploadImage } from "../utils/imageUpload";
+import { compressAndConvertToBase64 } from "../utils/imageCompression";
 
 function EditArticle() {
   const { user } = useAuth();
@@ -73,7 +73,7 @@ function EditArticle() {
     try {
       let finalImageUrl = article.image;
       if (selectedImageFile instanceof File) {
-        finalImageUrl = await uploadImage(selectedImageFile);
+        finalImageUrl = await compressAndConvertToBase64(selectedImageFile);
       }
       await updateDoc(doc(db, "articles", id), {
         ...updatedData,

@@ -139,6 +139,11 @@ export function AppProvider({ children }) {
   };
 
   const seedDefaultCategories = async () => {
+    // Store previous categories in case we need to revert
+    const prevCategories = [...categories];
+    // Optimistic Update
+    setCategories(DEFAULT_CATEGORIES);
+    
     try {
       // Clear all existing categories first to avoid duplicates
       const snapshot = await getDocs(collection(db, "categories"));
@@ -156,6 +161,8 @@ export function AppProvider({ children }) {
       return true;
     } catch (error) {
       console.error("Error seeding categories:", error);
+      // Revert Optimistic Update on failure
+      setCategories(prevCategories);
       return false;
     }
   };
