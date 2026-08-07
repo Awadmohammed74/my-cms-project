@@ -11,7 +11,7 @@ import Toast from "../components/Toast";
 import { db } from "../firebase/config";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { useAuth } from "../context/AuthContext";
-import { compressAndConvertToBase64 } from "../utils/imageCompression";
+import { uploadImage } from "../utils/imageUpload";
 
 function AddArticle() {
   const { user } = useAuth();
@@ -35,7 +35,7 @@ function AddArticle() {
     try {
       let imageUrl = "https://placehold.co/600x400/e2e8f0/475569?text=No+Image";
       if (selectedImageFile) {
-        imageUrl = await compressAndConvertToBase64(selectedImageFile);
+        imageUrl = await uploadImage(selectedImageFile);
       }
 
       const finalArticlePayload = {

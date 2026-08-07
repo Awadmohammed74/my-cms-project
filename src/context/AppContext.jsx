@@ -32,6 +32,12 @@ export function AppProvider({ children }) {
   // ========== Global Search ==========
   const [searchQuery, setSearchQuery] = useState("");
 
+  // ========== Unified Initial-Load State ==========
+  // True only after ALL three data sources have completed their first fetch.
+  // The individual *_Loading flags are never reset to true after their
+  // initial fetch, so once isAppReady becomes true it stays true.
+  const isAppReady = !articlesLoading && !statsLoading && !categoriesLoading;
+
   // ========== Fetch Articles (Real-time with orderBy) ==========
   useEffect(() => {
     const articlesCollection = collection(db, "articles");
@@ -91,16 +97,25 @@ export function AppProvider({ children }) {
   const addCategory = async (name) => {
     const trimmed = name.trim();
     if (!trimmed || categories.includes(trimmed)) return false;
+    
+    // Optimistic Update
+    setCategories((prev) => [...prev, trimmed]);
+    
     try {
       await addDoc(collection(db, "categories"), { name: trimmed });
       return true;
     } catch (error) {
       console.error("Error adding category:", error);
+      // Revert Optimistic Update
+      setCategories((prev) => prev.filter((c) => c !== trimmed));
       return false;
     }
   };
 
   const deleteCategory = async (name) => {
+    // Optimistic Update
+    setCategories((prev) => prev.filter((c) => c !== name));
+    
     try {
       const q = query(collection(db, "categories"), where("name", "==", name));
       const snapshot = await getDocs(q);
@@ -114,6 +129,11 @@ export function AppProvider({ children }) {
       return true;
     } catch (error) {
       console.error("Error deleting category:", error);
+      // Revert Optimistic Update (best effort, we just add it back)
+      setCategories((prev) => {
+        if (!prev.includes(name)) return [...prev, name];
+        return prev;
+      });
       return false;
     }
   };
@@ -200,6 +220,7 @@ export function AppProvider({ children }) {
         statsLoading,
         categories,
         categoriesLoading,
+        isAppReady,
         addCategory,
         deleteCategory,
         seedDefaultCategories,

@@ -2,7 +2,7 @@ import { FileText, Eye, Clock, TrendingUp, ArrowUp } from "lucide-react";
 import { useApp } from "../context/AppContext";
 
 function Action() {
-  const { articles, articlesLoading: loading } = useApp();
+  const { articles } = useApp();
 
   const totalArticles = articles.length;
   const publishedArticles = articles.filter(
@@ -69,40 +69,31 @@ function Action() {
 
       {/* Stats Grid */}
       <div className="p-4">
-        {loading ? (
-          <div className="flex items-center justify-center py-8">
-            <div className="flex flex-col items-center gap-2">
-              <div className="w-5 h-5 border-2 border-indigo-600 border-t-transparent rounded-full animate-spin" />
-              <p className="text-xs font-medium text-slate-400">Loading...</p>
-            </div>
-          </div>
-        ) : (
-          <div className="grid grid-cols-2 gap-3">
-            {stats.map((stat) => {
-              const Icon = stat.icon;
-              return (
-                <div
-                  key={stat.label}
-                  className={`flex flex-col items-center gap-2 p-3.5 rounded-xl border ${stat.border} ${stat.bg}`}
-                >
-                  <Icon className={`w-5 h-5 ${stat.color}`} />
-                  <div className="text-center">
-                    <p className="text-lg font-bold text-slate-800">
-                      {stat.value}
-                    </p>
-                    <p className="text-[11px] font-medium text-slate-500">
-                      {stat.label}
-                    </p>
-                  </div>
+        <div className="grid grid-cols-2 gap-3">
+          {stats.map((stat) => {
+            const Icon = stat.icon;
+            return (
+              <div
+                key={stat.label}
+                className={`flex flex-col items-center gap-2 p-3.5 rounded-xl border ${stat.border} ${stat.bg}`}
+              >
+                <Icon className={`w-5 h-5 ${stat.color}`} />
+                <div className="text-center">
+                  <p className="text-lg font-bold text-slate-800">
+                    {stat.value}
+                  </p>
+                  <p className="text-[11px] font-medium text-slate-500">
+                    {stat.label}
+                  </p>
                 </div>
-              );
-            })}
-          </div>
-        )}
+              </div>
+            );
+          })}
+        </div>
       </div>
 
       {/* Footer */}
-      {!loading && totalArticles > 0 && (
+      {totalArticles > 0 && (
         <div className="px-5 py-3 bg-slate-50/50 border-t border-slate-100">
           <p className="text-xs text-slate-400 text-center">
             {publishedArticles} of {totalArticles} articles published

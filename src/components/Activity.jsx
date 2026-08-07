@@ -1,10 +1,10 @@
-import { FileText, Star, Eye, Clock, ArrowUp, Loader2 } from "lucide-react";
+import { FileText, Star, Eye, Clock, ArrowUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useApp } from "../context/AppContext";
 
 function Activity() {
   const navigate = useNavigate();
-  const { articles, articlesLoading: loading } = useApp();
+  const { articles } = useApp();
 
   // Helper to get article link (slug or id)
   const getArticleLink = (article) => article?.seo?.slug || article?.id;
@@ -83,16 +83,7 @@ function Activity() {
 
       {/* Activity List */}
       <div className="divide-y divide-slate-100">
-        {loading ? (
-          <div className="flex items-center justify-center py-16">
-            <div className="flex flex-col items-center gap-3">
-              <Loader2 className="w-6 h-6 text-indigo-600 animate-spin" />
-              <p className="text-sm font-medium text-slate-400">
-                Loading activity...
-              </p>
-            </div>
-          </div>
-        ) : recentArticles.length === 0 ? (
+        {recentArticles.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-16 text-center px-6">
             <div className="p-3 rounded-full bg-slate-100 mb-3">
               <FileText className="w-8 h-8 text-slate-400" />

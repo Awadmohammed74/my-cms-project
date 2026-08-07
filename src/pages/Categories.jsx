@@ -65,13 +65,8 @@ const CATEGORY_COLORS = [
 ];
 
 function Categories() {
-  const {
-    categories,
-    categoriesLoading,
-    addCategory,
-    deleteCategory,
-    seedDefaultCategories,
-  } = useApp();
+  const { categories, addCategory, deleteCategory, seedDefaultCategories, articles } =
+    useApp();
 
   const [newCategoryName, setNewCategoryName] = useState("");
   const [toast, setToast] = useState(null);
@@ -150,16 +145,7 @@ function Categories() {
             </div>
 
             <div className="p-6">
-              {categoriesLoading ? (
-                <div className="flex items-center justify-center py-16">
-                  <div className="flex flex-col items-center gap-3">
-                    <Loader2 className="w-8 h-8 text-indigo-600 animate-spin" />
-                    <p className="text-sm font-medium text-slate-400">
-                      Loading categories...
-                    </p>
-                  </div>
-                </div>
-              ) : categories.length === 0 ? (
+              {categories.length === 0 ? (
                 <div className="flex flex-col items-center justify-center py-16 text-center">
                   <div className="w-16 h-16 rounded-2xl bg-slate-100 flex items-center justify-center mb-4">
                     <AlertTriangle className="w-8 h-8 text-slate-400" />
@@ -297,7 +283,9 @@ function Categories() {
               </div>
               <div className="flex items-center justify-between text-sm">
                 <span className="text-slate-500">Used in articles</span>
-                <span className="font-bold text-slate-800">—</span>
+                <span className="font-bold text-slate-800">
+                  {new Set(articles?.map(a => a.category)).size}
+                </span>
               </div>
               <div className="flex items-center justify-between text-sm">
                 <span className="text-slate-500">Max categories</span>

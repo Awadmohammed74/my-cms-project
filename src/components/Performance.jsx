@@ -2,7 +2,7 @@ import { FileText, Eye, Clock, Star, TrendingUp } from "lucide-react";
 import { useApp } from "../context/AppContext";
 
 function Performance() {
-  const { articles, articlesLoading: loading } = useApp();
+  const { articles } = useApp();
 
   const totalArticles = articles.length;
   const publishedArticles = articles.filter(
@@ -84,44 +84,33 @@ function Performance() {
 
       {/* Metrics */}
       <div className="p-4 space-y-4">
-        {loading ? (
-          <div className="flex items-center justify-center py-8">
-            <div className="flex flex-col items-center gap-2">
-              <div className="w-5 h-5 border-2 border-indigo-600 border-t-transparent rounded-full animate-spin" />
-              <p className="text-xs font-medium text-slate-400">Loading...</p>
-            </div>
-          </div>
-        ) : (
-          metrics.map((metric) => {
-            const Icon = metric.icon;
-            return (
-              <div key={metric.label} className="space-y-1.5">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className={`p-1 rounded-md ${metric.iconBg}`}>
-                      <Icon className="w-3.5 h-3.5" />
-                    </div>
-                    <span className="text-xs font-medium text-slate-600">
-                      {metric.label}
-                    </span>
+        {metrics.map((metric) => {
+          const Icon = metric.icon;
+          return (
+            <div key={metric.label} className="space-y-1.5">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className={`p-1 rounded-md ${metric.iconBg}`}>
+                    <Icon className="w-3.5 h-3.5" />
                   </div>
-                  <span className="text-xs font-bold text-slate-800">
-                    {metric.value}
-                    {metric.suffix}
+                  <span className="text-xs font-medium text-slate-600">
+                    {metric.label}
                   </span>
                 </div>
-                <div
-                  className={`h-1.5 w-full rounded-full ${metric.trackColor}`}
-                >
-                  <div
-                    className={`h-1.5 rounded-full ${metric.color} transition-all duration-500`}
-                    style={{ width: `${Math.min(metric.progress, 100)}%` }}
-                  />
-                </div>
+                <span className="text-xs font-bold text-slate-800">
+                  {metric.value}
+                  {metric.suffix}
+                </span>
               </div>
-            );
-          })
-        )}
+              <div className={`h-1.5 w-full rounded-full ${metric.trackColor}`}>
+                <div
+                  className={`h-1.5 rounded-full ${metric.color} transition-all duration-500`}
+                  style={{ width: `${Math.min(metric.progress, 100)}%` }}
+                />
+              </div>
+            </div>
+          );
+        })}
       </div>
 
       {/* Footer Status */}

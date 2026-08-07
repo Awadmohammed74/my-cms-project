@@ -18,7 +18,7 @@ import Toast from "./Toast";
 import ConfirmModal from "./ConfirmModal";
 
 function ArticlesSection() {
-  const { articles, articlesLoading, searchQuery } = useApp();
+  const { articles, searchQuery } = useApp();
 
   const [statusFilter, setStatusFilter] = useState("all");
   const [sortBy, setSortBy] = useState("latest");
@@ -115,19 +115,6 @@ function ArticlesSection() {
       setConfirmDelete(null);
     }
   };
-
-  if (articlesLoading) {
-    return (
-      <div className="flex justify-center items-center py-16 bg-white border border-slate-200 rounded-xl">
-        <div className="flex flex-col items-center gap-3">
-          <div className="w-8 h-8 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin" />
-          <p className="text-sm font-medium text-slate-500">
-            Loading articles...
-          </p>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <>

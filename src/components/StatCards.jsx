@@ -46,18 +46,7 @@ const getCardMeta = (type) => {
 };
 
 function StatCards() {
-  const { stats, statsLoading } = useApp();
-
-  if (statsLoading) {
-    return (
-      <div className="flex items-center justify-center py-16 bg-white border border-slate-200 rounded-xl">
-        <div className="flex flex-col items-center gap-3">
-          <div className="w-8 h-8 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin" />
-          <p className="text-sm font-medium text-slate-500">Loading stats...</p>
-        </div>
-      </div>
-    );
-  }
+  const { stats } = useApp();
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-9">
