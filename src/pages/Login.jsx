@@ -99,7 +99,7 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-plum via-secondary to-plum py-6 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-plum via-secondary to-plum py-2 px-0 sm:py-3 sm:px-4">
       {toast && (
         <Toast
           message={toast.message}
@@ -108,9 +108,9 @@ function Login() {
         />
       )}
 
-      <div className="w-full max-w-md">
+      <div className="w-full max-w-xs sm:max-w-md">
         {/* Brand */}
-        <div className="text-center mb-5 sm:mb-6">
+        <div className="text-center mb-3 sm:mb-4">
           <img
             src={Logo}
             alt="PROCMS Logo"
@@ -183,7 +183,7 @@ function Login() {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   placeholder="John Doe"
-                  className="w-full p-2.5 sm:p-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-slate-600 focus:ring-2 focus:ring-accent/50 focus:border-accent outline-none transition-all text-sm"
+                  className="w-full p-2 sm:p-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-slate-600 focus:ring-2 focus:ring-accent/50 focus:border-accent outline-none transition-all text-sm"
                 />
               </div>
             )}
@@ -196,7 +196,7 @@ function Login() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@company.com"
-                className="w-full p-2.5 sm:p-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-slate-600 focus:ring-2 focus:ring-accent/50 focus:border-accent outline-none transition-all text-sm"
+                className="w-full p-2 sm:p-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-slate-600 focus:ring-2 focus:ring-accent/50 focus:border-accent outline-none transition-all text-sm"
               />
             </div>
 
@@ -210,7 +210,7 @@ function Login() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full p-2.5 sm:p-3 pr-12 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-slate-600 focus:ring-2 focus:ring-accent/50 focus:border-accent outline-none transition-all text-sm"
+                  className="w-full p-2 sm:p-3 pr-12 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-slate-600 focus:ring-2 focus:ring-accent/50 focus:border-accent outline-none transition-all text-sm"
                 />
                 <button
                   type="button"
@@ -229,7 +229,7 @@ function Login() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-primary text-white p-3 rounded-xl font-semibold hover:bg-cream0 transition-all mt-1 cursor-pointer disabled:opacity-60 flex items-center justify-center gap-2 text-sm"
+              className="w-full bg-primary text-white p-2.5 sm:p-3 rounded-xl font-semibold hover:bg-cream0 transition-all mt-1 cursor-pointer disabled:opacity-60 flex items-center justify-center gap-2 text-sm"
             >
               {loading ? (
                 <>
@@ -245,7 +245,7 @@ function Login() {
           </form>
 
           {/* Toggle Register/Login */}
-          <div className="mt-4 text-center">
+          <div className="mt-3 text-center">
             <button
               type="button"
               onClick={() => {
