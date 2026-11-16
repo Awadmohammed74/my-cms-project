@@ -1,4 +1,5 @@
-import { Loader2 } from "lucide-react";
+﻿import { Loader2 } from "lucide-react";
+import Logo from "../assets/PROCMS Logo with Leaf Panel.png";
 
 /**
  * Global Splash Screen (presentational component)
@@ -27,9 +28,7 @@ function SplashScreen({ visible = true }) {
       <div className="flex flex-col items-center gap-6 px-6 text-center">
         {/* Logo / Brand */}
         <div className="flex flex-col items-center">
-          <div className="text-5xl sm:text-6xl font-black tracking-wider text-accent">
-            PROCMS
-          </div>
+          <img src={Logo} alt="PROCMS Logo" className="h-24 w-auto mb-2" />
           <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.25em] mt-1">
             Enterprise Admin
           </p>
