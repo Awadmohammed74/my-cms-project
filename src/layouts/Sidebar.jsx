@@ -11,7 +11,6 @@ import {
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import ConfirmModal from "../components/ConfirmModal";
-import Logo from "../assets/PROCMS Logo with Leaf Panel.png";
 
 function Sidebar({ isOpen, setIsOpen }) {
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
@@ -57,7 +56,9 @@ function Sidebar({ isOpen, setIsOpen }) {
       >
         <div className="mb-8 border-b border-accent pb-4 flex items-center justify-between">
           <div>
-            <img src={Logo} alt="PROCMS Logo" className="h-16 w-auto" />
+            <h2 className="text-2xl font-black tracking-wider text-accent">
+              PROCMS
+            </h2>
             <h4 className="text-xs font-semibold text-accent uppercase tracking-widest mt-1">
               Enterprise Admin
             </h4>
