@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import Toast from "../components/Toast";
 import { Eye, EyeOff, Loader2, LogIn } from "lucide-react";
+import Logo from "../assets/PROCMS Logo with Leaf Panel.png";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -110,9 +111,11 @@ function Login() {
       <div className="w-full max-w-md">
         {/* Brand */}
         <div className="text-center mb-5 sm:mb-6">
-          <h1 className="text-3xl sm:text-4xl font-black tracking-wider text-accent">
-            PROCMS
-          </h1>
+          <img
+            src={Logo}
+            alt="PROCMS Logo"
+            className="h-20 w-auto mx-auto mb-2"
+          />
           <p className="text-[10px] sm:text-xs font-semibold text-slate-500 uppercase tracking-[0.2em] mt-1">
             Enterprise Admin
           </p>
