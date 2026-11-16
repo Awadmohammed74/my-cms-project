@@ -35,8 +35,8 @@ function Sidebar({ isOpen, setIsOpen }) {
   const navLinkStyling = ({ isActive }) =>
     `flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition-colors cursor-pointer ${
       isActive
-        ? "bg-indigo-600 text-white"
-        : "text-slate-300 hover:bg-slate-800 hover:text-white"
+        ? "bg-primary text-white"
+        : "text-cream hover:bg-secondary hover:text-white"
     }`;
 
   return (
@@ -44,28 +44,28 @@ function Sidebar({ isOpen, setIsOpen }) {
       {/* Mobile Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-40 bg-slate-900/50 backdrop-blur-sm lg:hidden transition-opacity"
+          className="fixed inset-0 z-40 bg-plum/70 backdrop-blur-sm lg:hidden transition-opacity"
           onClick={() => setIsOpen(false)}
         />
       )}
 
       <aside
-        className={`fixed inset-y-0 left-0 z-50 w-64 bg-slate-900 text-slate-100 p-6 flex flex-col justify-between border-r border-slate-800 transition-transform duration-300 ease-in-out lg:translate-x-0 lg:sticky lg:top-0 lg:h-screen lg:w-64 ${
+        className={`fixed inset-y-0 left-0 z-50 w-64 bg-plum text-cream p-6 flex flex-col justify-between border-r border-accent transition-transform duration-300 ease-in-out lg:translate-x-0 lg:sticky lg:top-0 lg:h-screen lg:w-64 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="mb-8 border-b border-slate-800 pb-4 flex items-center justify-between">
+        <div className="mb-8 border-b border-accent pb-4 flex items-center justify-between">
           <div>
-            <h2 className="text-2xl font-black tracking-wider text-indigo-400">
+            <h2 className="text-2xl font-black tracking-wider text-accent">
               PROCMS
             </h2>
-            <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mt-1">
+            <h4 className="text-xs font-semibold text-accent uppercase tracking-widest mt-1">
               Enterprise Admin
             </h4>
           </div>
           <button
             onClick={() => setIsOpen(false)}
-            className="lg:hidden p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors"
+            className="lg:hidden p-2 text-accent hover:text-cream rounded-lg hover:bg-secondary transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -94,7 +94,7 @@ function Sidebar({ isOpen, setIsOpen }) {
         </nav>
 
         {/* الروابط السفلية الثابتة */}
-        <ul className="space-y-2 mt-auto border-t border-slate-800 pt-4">
+        <ul className="space-y-2 mt-auto border-t border-accent pt-4">
           <li>
             <NavLink
               to="/settings"
@@ -108,7 +108,7 @@ function Sidebar({ isOpen, setIsOpen }) {
 
           <li
             onClick={() => setShowLogoutConfirm(true)}
-            className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white font-medium cursor-pointer transition-colors"
+            className="flex items-center gap-3 px-4 py-3 rounded-lg text-cream hover:bg-secondary hover:text-white font-medium cursor-pointer transition-colors"
           >
             <LogOut className="w-5 h-5" />
             <span>Logout</span>

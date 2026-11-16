@@ -32,8 +32,8 @@ function PublishSetting({
     <div className="w-full bg-white border border-slate-200 rounded-2xl shadow-sm h-fit select-none">
       {/* Header */}
       <div className="px-6 py-4 border-b border-slate-100 flex items-center gap-2.5">
-        <div className="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center">
-          <Sparkles className="w-4 h-4 text-indigo-600" />
+        <div className="w-8 h-8 rounded-lg bg-cream flex items-center justify-center">
+          <Sparkles className="w-4 h-4 text-accent" />
         </div>
         <div>
           <h3 className="text-sm font-bold text-slate-800">
@@ -49,8 +49,8 @@ function PublishSetting({
         {/* Featured Toggle */}
         <div className="flex items-center justify-between p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-slate-200 transition-colors duration-200">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center shrink-0">
-              <Star className="w-4 h-4 text-amber-500" />
+            <div className="w-8 h-8 rounded-lg bg-cream flex items-center justify-center shrink-0">
+              <Star className="w-4 h-4 text-accent" />
             </div>
             <div className="flex flex-col">
               <span className="text-sm font-semibold text-slate-700">
@@ -66,7 +66,7 @@ function PublishSetting({
             onClick={() => setFeatured(!featured)}
             className={`w-11 h-6 flex items-center rounded-full p-0.5 cursor-pointer transition-all duration-300 outline-none shrink-0 ${
               featured
-                ? "bg-indigo-600 shadow-md shadow-indigo-500/20"
+                ? "bg-primary shadow-md shadow-primary/20"
                 : "bg-slate-200 border border-slate-300/60"
             }`}
           >
@@ -112,7 +112,7 @@ function PublishSetting({
                     }))
                   }
                   placeholder="SEO title for search engines..."
-                  className="w-full px-3 py-2 text-xs border border-slate-200 text-slate-700 rounded-lg focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:outline-none transition-all placeholder-slate-400 hover:border-slate-300"
+                  className="w-full px-3 py-2 text-xs border border-slate-200 text-slate-700 rounded-lg focus:ring-2 focus:ring-accent/20 focus:border-accent focus:outline-none transition-all placeholder-slate-400 hover:border-slate-300"
                 />
                 <span className="text-[10px] text-slate-400 mt-0.5 block text-right">
                   {(seoData.metaTitle || "").length}/60
@@ -135,7 +135,7 @@ function PublishSetting({
                     }))
                   }
                   placeholder="Brief description for search results..."
-                  className="w-full px-3 py-2 text-xs border border-slate-200 text-slate-700 rounded-lg focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:outline-none resize-none transition-all placeholder-slate-400 hover:border-slate-300"
+                  className="w-full px-3 py-2 text-xs border border-slate-200 text-slate-700 rounded-lg focus:ring-2 focus:ring-accent/20 focus:border-accent focus:outline-none resize-none transition-all placeholder-slate-400 hover:border-slate-300"
                 />
                 <span className="text-[10px] text-slate-400 mt-0.5 block text-right">
                   {(seoData.metaDescription || "").length}/160
@@ -158,7 +158,7 @@ function PublishSetting({
                     }))
                   }
                   placeholder="keyword1, keyword2, keyword3..."
-                  className="w-full px-3 py-2 text-xs border border-slate-200 text-slate-700 rounded-lg focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:outline-none transition-all placeholder-slate-400 hover:border-slate-300"
+                  className="w-full px-3 py-2 text-xs border border-slate-200 text-slate-700 rounded-lg focus:ring-2 focus:ring-accent/20 focus:border-accent focus:outline-none transition-all placeholder-slate-400 hover:border-slate-300"
                 />
               </div>
 
@@ -178,7 +178,7 @@ function PublishSetting({
                     }))
                   }
                   placeholder="https://example.com/article..."
-                  className="w-full px-3 py-2 text-xs border border-slate-200 text-slate-700 rounded-lg focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:outline-none transition-all placeholder-slate-400 hover:border-slate-300"
+                  className="w-full px-3 py-2 text-xs border border-slate-200 text-slate-700 rounded-lg focus:ring-2 focus:ring-accent/20 focus:border-accent focus:outline-none transition-all placeholder-slate-400 hover:border-slate-300"
                 />
               </div>
 
@@ -198,7 +198,7 @@ function PublishSetting({
                     }))
                   }
                   placeholder="custom-url-slug..."
-                  className="w-full px-3 py-2 text-xs border border-slate-200 text-slate-700 rounded-lg focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:outline-none transition-all placeholder-slate-400 hover:border-slate-300 font-mono"
+                  className="w-full px-3 py-2 text-xs border border-slate-200 text-slate-700 rounded-lg focus:ring-2 focus:ring-accent/20 focus:border-accent focus:outline-none transition-all placeholder-slate-400 hover:border-slate-300 font-mono"
                 />
               </div>
             </div>
@@ -215,7 +215,7 @@ function PublishSetting({
               <span className="text-sm font-semibold text-slate-500">Tags</span>
             </div>
             {tags.length > 0 && (
-              <span className="text-[10px] font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full border border-indigo-100">
+              <span className="text-[10px] font-semibold text-accent bg-cream px-2 py-0.5 rounded-full border border-rose">
                 {tags.length} active
               </span>
             )}
@@ -243,7 +243,7 @@ function PublishSetting({
 
           <div>
             {isAdding ? (
-              <div className="flex items-center gap-2 bg-white p-2 rounded-xl border border-slate-200 focus-within:border-indigo-500 focus-within:ring-2 focus-within:ring-indigo-500/20 transition-all duration-200">
+              <div className="flex items-center gap-2 bg-white p-2 rounded-xl border border-slate-200 focus-within:border-accent focus-within:ring-2 focus-within:ring-accent/20 transition-all duration-200">
                 <input
                   ref={inputRef}
                   type="text"
@@ -262,7 +262,7 @@ function PublishSetting({
                 <div className="flex items-center gap-2 shrink-0">
                   <button
                     type="button"
-                    className="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1.5 rounded-lg text-xs font-semibold cursor-pointer transition-all shadow-sm active:scale-95"
+                    className="bg-primary hover:bg-secondary text-white px-3 py-1.5 rounded-lg text-xs font-semibold cursor-pointer transition-all shadow-sm active:scale-95"
                     onClick={() => {
                       if (newTag.trim() !== "") {
                         setTags([...tags, newTag.trim()]);
@@ -289,7 +289,7 @@ function PublishSetting({
               <button
                 type="button"
                 onClick={() => setIsAdding(true)}
-                className="flex items-center gap-1.5 text-xs font-semibold text-indigo-600 hover:text-indigo-700 border border-dashed border-slate-300 hover:border-indigo-400 hover:bg-indigo-50/50 rounded-xl px-4 py-2.5 cursor-pointer transition-all duration-200 w-full justify-center"
+                className="flex items-center gap-1.5 text-xs font-semibold text-primary hover:text-secondary border border-dashed border-slate-300 hover:border-accent hover:bg-cream/50 rounded-xl px-4 py-2.5 cursor-pointer transition-all duration-200 w-full justify-center"
               >
                 <span className="text-sm">+</span>
                 Add tag

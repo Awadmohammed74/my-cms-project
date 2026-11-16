@@ -98,7 +98,7 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-6 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-plum via-secondary to-plum py-6 px-4">
       {toast && (
         <Toast
           message={toast.message}
@@ -110,7 +110,7 @@ function Login() {
       <div className="w-full max-w-md">
         {/* Brand */}
         <div className="text-center mb-5 sm:mb-6">
-          <h1 className="text-3xl sm:text-4xl font-black tracking-wider text-indigo-400">
+          <h1 className="text-3xl sm:text-4xl font-black tracking-wider text-accent">
             PROCMS
           </h1>
           <p className="text-[10px] sm:text-xs font-semibold text-slate-500 uppercase tracking-[0.2em] mt-1">
@@ -149,7 +149,7 @@ function Login() {
             type="button"
             onClick={handleDemoLogin}
             disabled={loading}
-            className="w-full mb-3.5 sm:mb-4 flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white p-3 rounded-xl font-semibold hover:from-emerald-500 hover:to-teal-500 transition-all cursor-pointer disabled:opacity-60 text-xs sm:text-sm"
+            className="w-full mb-3.5 sm:mb-4 flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary text-white p-3 rounded-xl font-semibold hover:from-secondary hover:to-accent transition-all cursor-pointer disabled:opacity-60 text-xs sm:text-sm"
           >
             {loading ? (
               <Loader2 className="w-4 h-4 animate-spin" />
@@ -180,7 +180,7 @@ function Login() {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   placeholder="John Doe"
-                  className="w-full p-2.5 sm:p-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-slate-600 focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 outline-none transition-all text-sm"
+                  className="w-full p-2.5 sm:p-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-slate-600 focus:ring-2 focus:ring-accent/50 focus:border-accent outline-none transition-all text-sm"
                 />
               </div>
             )}
@@ -193,7 +193,7 @@ function Login() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@company.com"
-                className="w-full p-2.5 sm:p-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-slate-600 focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 outline-none transition-all text-sm"
+                className="w-full p-2.5 sm:p-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-slate-600 focus:ring-2 focus:ring-accent/50 focus:border-accent outline-none transition-all text-sm"
               />
             </div>
 
@@ -207,7 +207,7 @@ function Login() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full p-2.5 sm:p-3 pr-12 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-slate-600 focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 outline-none transition-all text-sm"
+                  className="w-full p-2.5 sm:p-3 pr-12 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-slate-600 focus:ring-2 focus:ring-accent/50 focus:border-accent outline-none transition-all text-sm"
                 />
                 <button
                   type="button"
@@ -226,7 +226,7 @@ function Login() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-indigo-600 text-white p-3 rounded-xl font-semibold hover:bg-indigo-500 transition-all mt-1 cursor-pointer disabled:opacity-60 flex items-center justify-center gap-2 text-sm"
+              className="w-full bg-primary text-white p-3 rounded-xl font-semibold hover:bg-cream0 transition-all mt-1 cursor-pointer disabled:opacity-60 flex items-center justify-center gap-2 text-sm"
             >
               {loading ? (
                 <>
@@ -250,7 +250,7 @@ function Login() {
                 setUsername("");
                 setToast(null);
               }}
-              className="text-xs sm:text-sm text-slate-400 hover:text-indigo-400 transition-colors cursor-pointer"
+              className="text-xs sm:text-sm text-slate-400 hover:text-accent transition-colors cursor-pointer"
             >
               {isRegister
                 ? "Already have an account? Sign In"

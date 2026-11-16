@@ -1,4 +1,4 @@
-﻿import { Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 
 /**
  * Global Splash Screen (presentational component)
@@ -21,13 +21,13 @@ function SplashScreen({ visible = true }) {
   return (
     <div
       className={`fixed inset-0 z-[100] flex items-center justify-center
-                   bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900
+                   bg-gradient-to-br from-plum via-secondary to-plum
                    transition-opacity duration-500 ${opacity}`}
     >
       <div className="flex flex-col items-center gap-6 px-6 text-center">
         {/* Logo / Brand */}
         <div className="flex flex-col items-center">
-          <div className="text-5xl sm:text-6xl font-black tracking-wider text-indigo-400">
+          <div className="text-5xl sm:text-6xl font-black tracking-wider text-accent">
             PROCMS
           </div>
           <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.25em] mt-1">
@@ -37,8 +37,8 @@ function SplashScreen({ visible = true }) {
 
         {/* Spinner */}
         <div className="relative">
-          <Loader2 className="w-10 h-10 text-indigo-500 animate-spin" />
-          <div className="absolute inset-0 w-10 h-10 rounded-full border-2 border-indigo-500/20 border-t-transparent animate-ping" />
+          <Loader2 className="w-10 h-10 text-accent animate-spin" />
+          <div className="absolute inset-0 w-10 h-10 rounded-full border-2 border-accent/20 border-t-transparent animate-ping" />
         </div>
 
         {/* Loading text */}

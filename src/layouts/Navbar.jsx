@@ -75,7 +75,7 @@ function Navbar({ onMenuClick }) {
     user?.displayName || user?.email?.split("@")[0] || "Admin";
   const photoURL =
     user?.photoURL ||
-    `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName || "User")}&background=4f46e5&color=fff&size=200`;
+    `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName || "User")}&background=2B124C&color=fff&size=200`;
   const email = user?.email || "admin@procms.com";
 
   return (
@@ -108,7 +108,7 @@ function Navbar({ onMenuClick }) {
                   if (localSearch.trim()) setShowSearchResults(true);
                 }}
                 placeholder="Search articles, authors, categories..."
-                className="w-full rounded-lg border border-slate-300 bg-slate-50/50 py-2 pl-9 pr-9 text-sm text-slate-700 placeholder:text-slate-400 outline-none transition-all focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
+                className="w-full rounded-lg border border-slate-300 bg-slate-50/50 py-2 pl-9 pr-9 text-sm text-slate-700 placeholder:text-slate-400 outline-none transition-all focus:border-accent focus:ring-2 focus:ring-accent/20"
               />
               {localSearch && (
                 <button
@@ -146,7 +146,7 @@ function Navbar({ onMenuClick }) {
                             );
                             handleClearSearch();
                           }}
-                          className="flex items-center gap-3 px-4 py-3 hover:bg-indigo-50/40 cursor-pointer transition-colors border-b border-slate-50 last:border-b-0"
+                          className="flex items-center gap-3 px-4 py-3 hover:bg-cream/40 cursor-pointer transition-colors border-b border-slate-50 last:border-b-0"
                         >
                           <img
                             src={
@@ -165,8 +165,8 @@ function Navbar({ onMenuClick }) {
                                 {article.category || "Uncategorized"}
                               </span>
                               {article.isFeatured && (
-                                <span className="flex items-center gap-0.5 text-[11px] font-medium text-amber-600">
-                                  <Star className="w-2.5 h-2.5 fill-amber-400 text-amber-400" />
+                                <span className="flex items-center gap-0.5 text-[11px] font-medium text-accent">
+                                  <Star className="w-2.5 h-2.5 text-accent" />
                                   Featured
                                 </span>
                               )}
@@ -244,7 +244,7 @@ function Navbar({ onMenuClick }) {
                             );
                             handleClearSearch();
                           }}
-                          className="flex items-center gap-3 px-4 py-3 hover:bg-indigo-50 cursor-pointer transition-colors border-b border-slate-50 last:border-b-0"
+                          className="flex items-center gap-3 px-4 py-3 hover:bg-cream cursor-pointer transition-colors border-b border-slate-50 last:border-b-0"
                         >
                           <img
                             src={
@@ -300,7 +300,7 @@ function Navbar({ onMenuClick }) {
                 className="h-8 w-8 sm:h-9 sm:w-9 rounded-full object-cover border-2 border-slate-200"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName || "User")}&background=4f46e5&color=fff&size=200`;
+                  e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName || "User")}&background=2B124C&color=fff&size=200`;
                 }}
               />
               <button

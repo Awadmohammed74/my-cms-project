@@ -10,7 +10,7 @@ function Breadcrumb() {
       <h5 className="text-sm text-slate-800 flex items-center gap-1">
         <Link
           to="/"
-          className="text-slate-500 hover:text-indigo-600 transition-colors"
+          className="text-slate-500 hover:text-primary transition-colors"
         >
           Dashboard
         </Link>
@@ -30,11 +30,11 @@ function Breadcrumb() {
               <span className="mx-2 text-slate-400 font-normal">&gt;</span>
 
               {isLast ? (
-                <span className="font-bold text-indigo-500">{displayName}</span>
+                <span className="font-bold text-accent">{displayName}</span>
               ) : (
                 <Link
                   to={to}
-                  className="text-slate-500 hover:text-indigo-600 transition-colors"
+                  className="text-slate-500 hover:text-primary transition-colors"
                 >
                   {displayName}
                 </Link>

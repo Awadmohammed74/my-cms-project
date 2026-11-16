@@ -27,7 +27,7 @@ function NotFound() {
           </button>
           <button
             onClick={() => navigate("/")}
-            className="inline-flex items-center gap-2 px-4 py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition-all cursor-pointer"
+            className="inline-flex items-center gap-2 px-4 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-secondary transition-all cursor-pointer"
           >
             <Home className="w-4 h-4" />
             Home

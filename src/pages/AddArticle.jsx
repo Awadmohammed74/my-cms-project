@@ -80,7 +80,7 @@ function AddArticle() {
         createPortal(
           <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[9990] flex items-center justify-center">
             <div className="bg-white rounded-2xl shadow-2xl p-8 flex flex-col items-center gap-4 animate-scale-in">
-              <div className="w-10 h-10 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin" />
+              <div className="w-10 h-10 border-4 border-primary border-t-transparent rounded-full animate-spin" />
               <p className="text-sm font-semibold text-slate-600">
                 Publishing article...
               </p>

@@ -170,7 +170,7 @@ function ArticlesSection() {
                         setStatusFilter(option.value);
                         setIsFilterOpen(false);
                       }}
-                      className={`w-full text-left px-4 py-2 text-sm font-medium flex items-center justify-between ${statusFilter === option.value ? "bg-indigo-50 text-indigo-600" : "text-slate-600 hover:bg-slate-50"}`}
+                      className={`w-full text-left px-4 py-2 text-sm font-medium flex items-center justify-between ${statusFilter === option.value ? "bg-cream text-primary" : "text-slate-600 hover:bg-slate-50"}`}
                     >
                       {option.label}
                       {statusFilter === option.value && (
@@ -211,7 +211,7 @@ function ArticlesSection() {
                         setSortBy(option.value);
                         setIsSortOpen(false);
                       }}
-                      className={`w-full text-left px-4 py-2 text-sm font-medium flex items-center justify-between ${sortBy === option.value ? "bg-indigo-50 text-indigo-600" : "text-slate-600 hover:bg-slate-50"}`}
+                      className={`w-full text-left px-4 py-2 text-sm font-medium flex items-center justify-between ${sortBy === option.value ? "bg-cream text-primary" : "text-slate-600 hover:bg-slate-50"}`}
                     >
                       {option.label}
                       {sortBy === option.value && <Check className="w-4 h-4" />}
@@ -224,7 +224,7 @@ function ArticlesSection() {
 
           {/* Search results indicator */}
           {searchQuery && (
-            <span className="text-xs font-medium text-indigo-600 bg-indigo-50 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg border border-indigo-100">
+            <span className="text-xs font-medium text-primary bg-cream px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg border border-rose">
               Search: "{searchQuery}" ({filteredAndSorted.length})
             </span>
           )}
@@ -268,7 +268,7 @@ function ArticlesSection() {
                           {article.category}
                         </p>
                         <span
-                          className={`inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-full border ${isPublished ? "bg-emerald-50 text-emerald-700 border-emerald-200" : "bg-amber-50 text-amber-700 border-amber-200"}`}
+                          className={`inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-full border ${isPublished ? "bg-cream text-accent border-rose" : "bg-cream text-accent border-rose"}`}
                         >
                           {isPublished ? "Published" : "Draft"}
                         </span>
@@ -277,7 +277,7 @@ function ArticlesSection() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         {article.isFeatured ? (
-                          <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
+                          <Star className="w-4 h-4 text-accent text-accent" />
                         ) : (
                           <span className="text-xs text-slate-300">
                             Not featured
@@ -291,7 +291,7 @@ function ArticlesSection() {
                               `/articles/view/${getArticleLink(article)}`,
                             )
                           }
-                          className="p-1.5 text-slate-500 hover:text-indigo-600 rounded-md hover:bg-slate-100 transition-colors cursor-pointer"
+                          className="p-1.5 text-slate-500 hover:text-primary rounded-md hover:bg-slate-100 transition-colors cursor-pointer"
                           title="View article"
                         >
                           <Eye className="w-4 h-4" />
@@ -300,7 +300,7 @@ function ArticlesSection() {
                           onClick={() =>
                             navigate(`/articles/edit-article/${article.id}`)
                           }
-                          className="p-1.5 text-slate-500 hover:text-indigo-600 rounded-md hover:bg-slate-100 transition-colors cursor-pointer"
+                          className="p-1.5 text-slate-500 hover:text-primary rounded-md hover:bg-slate-100 transition-colors cursor-pointer"
                           title="Edit article"
                         >
                           <Edit2 className="w-4 h-4" />
@@ -404,14 +404,14 @@ function ArticlesSection() {
                       </td>
                       <td className="px-4 sm:px-6 py-3 sm:py-4">
                         <span
-                          className={`inline-flex items-center px-2 py-0.5 sm:px-2.5 sm:py-1 text-xs font-medium rounded-full border ${isPublished ? "bg-emerald-50 text-emerald-700 border-emerald-200" : "bg-amber-50 text-amber-700 border-amber-200"}`}
+                          className={`inline-flex items-center px-2 py-0.5 sm:px-2.5 sm:py-1 text-xs font-medium rounded-full border ${isPublished ? "bg-cream text-accent border-rose" : "bg-cream text-accent border-rose"}`}
                         >
                           {isPublished ? "Published" : "Draft"}
                         </span>
                       </td>
                       <td className="px-4 sm:px-6 py-3 sm:py-4 text-center">
                         {article.isFeatured ? (
-                          <Star className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400 fill-amber-400 mx-auto" />
+                          <Star className="w-4 h-4 sm:w-5 sm:h-5 text-accent text-accent mx-auto" />
                         ) : (
                           <span className="text-slate-200">-</span>
                         )}
@@ -424,7 +424,7 @@ function ArticlesSection() {
                                 `/articles/view/${getArticleLink(article)}`,
                               )
                             }
-                            className="p-1 sm:p-1.5 text-slate-500 hover:text-indigo-600 rounded-md hover:bg-slate-100 transition-colors cursor-pointer"
+                            className="p-1 sm:p-1.5 text-slate-500 hover:text-primary rounded-md hover:bg-slate-100 transition-colors cursor-pointer"
                             title="View article"
                           >
                             <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -433,7 +433,7 @@ function ArticlesSection() {
                             onClick={() =>
                               navigate(`/articles/edit-article/${article.id}`)
                             }
-                            className="p-1 sm:p-1.5 text-slate-500 hover:text-indigo-600 rounded-md hover:bg-slate-100 transition-colors cursor-pointer"
+                            className="p-1 sm:p-1.5 text-slate-500 hover:text-primary rounded-md hover:bg-slate-100 transition-colors cursor-pointer"
                             title="Edit article"
                           >
                             <Edit2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />

@@ -50,8 +50,8 @@ function Activity() {
     const isPublished =
       article.status?.toLowerCase() === "published" ||
       article.isVisible === true;
-    if (article.isFeatured) return "bg-amber-50 text-amber-600";
-    if (isPublished) return "bg-emerald-50 text-emerald-600";
+    if (article.isFeatured) return "bg-cream text-accent";
+    if (isPublished) return "bg-cream text-accent";
     return "bg-slate-100 text-slate-500";
   };
 
@@ -75,7 +75,7 @@ function Activity() {
 
         <button
           onClick={() => navigate("/articles")}
-          className="text-xs font-semibold text-indigo-600 hover:text-indigo-700 transition-colors cursor-pointer"
+          className="text-xs font-semibold text-primary hover:text-secondary transition-colors cursor-pointer"
         >
           View All
         </button>
@@ -126,7 +126,7 @@ function Activity() {
                       {article.author || "Admin"}
                     </span>{" "}
                     <span className="text-slate-400">{action}</span>{" "}
-                    <span className="font-medium text-indigo-600 truncate">
+                    <span className="font-medium text-primary truncate">
                       {article.title}
                     </span>
                   </p>
@@ -142,8 +142,8 @@ function Activity() {
                       </span>
                     )}
                     {article.isFeatured && (
-                      <span className="text-[11px] sm:text-xs font-medium text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-100 flex items-center gap-1">
-                        <Star className="w-3 h-3 fill-amber-300 text-amber-300" />
+                      <span className="text-[11px] sm:text-xs font-medium text-accent bg-cream px-2 py-0.5 rounded-full border border-rose flex items-center gap-1">
+                        <Star className="w-3 h-3 text-accent text-accent" />
                         Featured
                       </span>
                     )}
@@ -152,7 +152,7 @@ function Activity() {
 
                 {/* View button - hidden on mobile */}
                 <div className="hidden sm:flex shrink-0 self-center">
-                  <div className="flex items-center gap-1.5 px-3 py-1.5 bg-indigo-50 border border-indigo-100 rounded-lg text-indigo-600 text-xs font-semibold">
+                  <div className="flex items-center gap-1.5 px-3 py-1.5 bg-cream border border-rose rounded-lg text-primary text-xs font-semibold">
                     <Eye className="w-3.5 h-3.5" />
                     View
                   </div>

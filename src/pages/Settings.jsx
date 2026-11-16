@@ -156,7 +156,7 @@ function Settings() {
           <div className="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
             <div className="px-6 py-5 border-b border-slate-100 bg-slate-50/50">
               <div className="flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-indigo-50 text-indigo-600">
+                <div className="p-2 rounded-lg bg-cream text-accent">
                   <User className="w-5 h-5" />
                 </div>
                 <div>
@@ -176,14 +176,14 @@ function Settings() {
                 <img
                   src={
                     user?.providerData?.[0]?.photoURL ||
-                    `https://ui-avatars.com/api/?name=${encodeURIComponent(user?.displayName || "HR")}&background=4f46e5&color=fff&size=200`
+                    `https://ui-avatars.com/api/?name=${encodeURIComponent(user?.displayName || "HR")}&background=2B124C&color=fff&size=200`
                   }
                   alt={displayName || "User"}
                   className="w-16 h-16 rounded-full object-cover border-2 border-slate-200"
                   referrerPolicy="no-referrer"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName || "HR")}&background=4f46e5&color=fff&size=200`;
+                    e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName || "HR")}&background=2B124C&color=fff&size=200`;
                   }}
                 />
                 <div className="flex-1">
@@ -195,7 +195,7 @@ function Settings() {
                     value={displayName}
                     onChange={(e) => setDisplayName(e.target.value)}
                     placeholder="Your full name"
-                    className="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all"
+                    className="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-accent/20 focus:border-accent outline-none transition-all"
                   />
                 </div>
               </div>
@@ -214,7 +214,7 @@ function Settings() {
 
                   {/* الـ Badge */}
                   {isGoogleUser && (
-                    <span className="ml-auto shrink-0 text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full border border-indigo-100">
+                    <span className="ml-auto shrink-0 text-xs font-semibold text-accent bg-cream px-2 py-0.5 rounded-full border border-rose">
                       Google
                     </span>
                   )}
@@ -226,7 +226,7 @@ function Settings() {
                 <button
                   type="submit"
                   disabled={saving}
-                  className="flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-xl hover:bg-indigo-700 active:scale-[0.98] transition-all cursor-pointer disabled:opacity-60 shadow-sm w-full sm:w-auto"
+                  className="flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-primary text-white text-sm font-semibold rounded-xl hover:bg-secondary active:scale-[0.98] transition-all cursor-pointer disabled:opacity-60 shadow-sm w-full sm:w-auto"
                 >
                   {saving ? (
                     <Loader2 className="w-4 h-4 animate-spin" />
@@ -244,7 +244,7 @@ function Settings() {
             <div className="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
               <div className="px-6 py-5 border-b border-slate-100 bg-slate-50/50">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-amber-50 text-amber-600">
+                  <div className="p-2 rounded-lg bg-cream text-accent">
                     <Lock className="w-5 h-5" />
                   </div>
                   <div>
@@ -269,7 +269,7 @@ function Settings() {
                       value={currentPassword}
                       onChange={(e) => setCurrentPassword(e.target.value)}
                       placeholder="Enter current password"
-                      className="w-full px-4 py-2.5 pr-11 border border-slate-300 rounded-lg text-sm text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all"
+                      className="w-full px-4 py-2.5 pr-11 border border-slate-300 rounded-lg text-sm text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-accent/20 focus:border-accent outline-none transition-all"
                     />
                     <button
                       type="button"
@@ -297,7 +297,7 @@ function Settings() {
                       value={newPassword}
                       onChange={(e) => setNewPassword(e.target.value)}
                       placeholder="Enter new password (min 6 characters)"
-                      className="w-full px-4 py-2.5 pr-11 border border-slate-300 rounded-lg text-sm text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all"
+                      className="w-full px-4 py-2.5 pr-11 border border-slate-300 rounded-lg text-sm text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-accent/20 focus:border-accent outline-none transition-all"
                     />
                     <button
                       type="button"
@@ -323,7 +323,7 @@ function Settings() {
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
                       placeholder="Confirm new password"
-                      className="w-full px-4 py-2.5 pr-11 border border-slate-300 rounded-lg text-sm text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all"
+                      className="w-full px-4 py-2.5 pr-11 border border-slate-300 rounded-lg text-sm text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-accent/20 focus:border-accent outline-none transition-all"
                     />
                     <button
                       type="button"
@@ -346,7 +346,7 @@ function Settings() {
                     type="button"
                     onClick={handleChangePassword}
                     disabled={saving}
-                    className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition-all cursor-pointer disabled:opacity-60 shadow-sm w-full sm:w-auto"
+                    className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-secondary transition-all cursor-pointer disabled:opacity-60 shadow-sm w-full sm:w-auto"
                   >
                     {saving ? (
                       <Loader2 className="w-4 h-4 animate-spin" />
@@ -381,14 +381,14 @@ function Settings() {
                 <img
                   src={
                     user?.providerData?.[0]?.photoURL ||
-                    `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName || "HR")}&background=4f46e5&color=fff&size=200`
+                    `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName || "HR")}&background=2B124C&color=fff&size=200`
                   }
                   alt={displayName || "User"}
-                  className="w-20 h-20 rounded-full object-cover border-4 border-indigo-100 mb-3"
+                  className="w-20 h-20 rounded-full object-cover border-4 border-rose mb-3"
                   referrerPolicy="no-referrer"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName || "User")}&background=4f46e5&color=fff&size=200`;
+                    e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName || "User")}&background=2B124C&color=fff&size=200`;
                   }}
                 />
                 <h3 className="text-base font-bold text-slate-900">

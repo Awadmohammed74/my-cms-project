@@ -33,6 +33,25 @@ PROCMS is a full-featured admin panel that allows content administrators to crea
 | Linting      | Oxlint                         |
 | Deployment   | Vercel                         |
 
+## Visual Theme & Color Palette
+
+PROCMS uses a consistent **Plum / Purple / Rose** visual identity. All brand colors are defined as centralized CSS variables in [`src/index.css`](src/index.css) (Tailwind CSS v4 `@theme`) and applied across the Sidebar, Navbar, Dashboard, articles, forms, buttons, cards, tables, modals, toasts, and badges.
+
+### Brand colors
+
+| Variable     | Hex        | Usage                                   |
+| ------------ | ---------- | --------------------------------------- |
+| `--color-plum`     | `#190019` | Sidebar and dark surfaces               |
+| `--color-primary`  | `#2B124C` | Primary buttons and main brand elements |
+| `--color-secondary`| `#522B5B` | Secondary accents and hover states      |
+| `--color-accent`   | `#854F6C` | Supporting accents and icons            |
+| `--color-rose`     | `#DFB6B2` | Subtle backgrounds and borders          |
+| `--color-cream`    | `#FBE4D8` | Warm surface accents                    |
+
+These are exposed as Tailwind utilities (e.g. `bg-plum`, `text-primary`, `border-rose`, `bg-cream`) and as semantic tokens (`--color-sidebar-bg`, `--color-sidebar-text`, `--color-sidebar-hover`, `--color-surface`, `--color-border-subtle`, `--color-button-primary`, `--color-button-primary-hover`, `--color-text-brand`).
+
+Neutral slate/gray palettes are preserved for structural elements (card backgrounds, borders, body text) to keep readable contrast. Success, warning, and error states remain recognizable (toasts, form validation, danger actions).
+
 ## Prerequisites
 
 Before running PROCMS locally, ensure you have the following:

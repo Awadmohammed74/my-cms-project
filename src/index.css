@@ -1,10 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #4f46e5;
-  --color-secondary: #0f172a;
-  --color-background: #a54100;
+  /* PROCMS Brand Palette — Plum / Purple / Rose visual identity */
+  --color-plum: #190019;
+  --color-primary: #2B124C;
+  --color-secondary: #522B5B;
+  --color-accent: #854F6C;
+  --color-rose: #DFB6B2;
+  --color-cream: #FBE4D8;
 
+  /* Semantic theme tokens (centralized) */
+  --color-sidebar-bg: #190019;
+  --color-sidebar-text: #FBE4D8;
+  --color-sidebar-hover: #2B124C;
+  --color-surface: #FBE4D8;
+  --color-border-subtle: #DFB6B2;
+  --color-button-primary: #2B124C;
+  --color-button-primary-hover: #522B5B;
+  --color-text-brand: #2B124C;
+
+  /* Neutral palettes preserved for structural readability & contrast */
+  --color-background: #FBE4D8;
   /* Enhanced contrast slate palette */
   --color-slate-50: #f8fafc;
   --color-slate-100: #eef2f6;
@@ -57,10 +73,10 @@
 @keyframes colorPulse {
   0%,
   100% {
-    color: oklch(0.511 0.262 276.966);
+    color: var(--color-accent);
   }
   50% {
-    color: rgb(255, 0, 221);
+    color: var(--color-primary);
   }
 }
 

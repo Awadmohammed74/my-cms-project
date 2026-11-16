@@ -17,7 +17,7 @@ function BreadcrumbHeader({ title, par, condition }) {
       {condition ? (
         <Button onClick={() => navigate("/articles/add")} />
       ) : (
-        <span className="flex items-center justify-center px-2.5 sm:px-3 py-0.5 text-xs sm:text-sm font-medium rounded-full bg-white text-indigo-600 border border-indigo-200">
+        <span className="flex items-center justify-center px-2.5 sm:px-3 py-0.5 text-xs sm:text-sm font-medium rounded-full bg-white text-primary border border-rose">
           <Dot className="w-5 h-5 sm:w-6 sm:h-6 animate-color-pulse shrink-0" />
           <span>Auto Saving...</span>
         </span>

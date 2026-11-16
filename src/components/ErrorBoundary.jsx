@@ -40,7 +40,7 @@ class ErrorBoundary extends Component {
             )}
             <button
               onClick={this.handleRetry}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition-all cursor-pointer shadow-sm"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-secondary transition-all cursor-pointer shadow-sm"
             >
               <RefreshCw className="w-4 h-4" />
               Try Again

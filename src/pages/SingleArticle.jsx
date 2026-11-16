@@ -87,7 +87,7 @@ function SingleArticle() {
       <div className="px-4 py-8">
         <div className="flex items-center justify-center py-32 bg-white border border-slate-200 rounded-xl mt-4">
           <div className="flex flex-col items-center gap-3">
-            <Loader2 className="w-8 h-8 text-indigo-600 animate-spin" />
+            <Loader2 className="w-8 h-8 text-primary animate-spin" />
             <p className="text-xs font-medium text-slate-500">
               Loading article...
             </p>
@@ -107,7 +107,7 @@ function SingleArticle() {
           </p>
           <button
             onClick={() => navigate("/articles")}
-            className="mt-6 flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-xs font-semibold rounded-lg hover:bg-indigo-700 transition-all cursor-pointer shadow-sm"
+            className="mt-6 flex items-center gap-2 px-4 py-2 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-secondary transition-all cursor-pointer shadow-sm"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             Back to Articles
@@ -161,7 +161,7 @@ function SingleArticle() {
         <div className="flex items-center justify-between bg-white border border-slate-200 rounded-xl px-4 py-2.5 shadow-sm">
           <button
             onClick={() => navigate("/articles")}
-            className="flex items-center gap-2 text-xs font-semibold text-slate-600 hover:text-indigo-600 px-2.5 py-1.5 rounded-lg hover:bg-slate-50 transition-all cursor-pointer"
+            className="flex items-center gap-2 text-xs font-semibold text-slate-600 hover:text-primary px-2.5 py-1.5 rounded-lg hover:bg-slate-50 transition-all cursor-pointer"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             Back to Articles
@@ -171,19 +171,19 @@ function SingleArticle() {
             <span
               className={`inline-flex items-center gap-1 px-2.5 py-1 text-[11px] font-semibold rounded-full border ${
                 isPublished
-                  ? "bg-emerald-50 text-emerald-700 border-emerald-200"
-                  : "bg-amber-50 text-amber-700 border-amber-200"
+                  ? "bg-cream text-accent border-rose"
+                  : "bg-cream text-accent border-rose"
               }`}
             >
               <span
-                className={`w-1 h-1 rounded-full ${isPublished ? "bg-emerald-500" : "bg-amber-500"}`}
+                className={`w-1 h-1 rounded-full ${isPublished ? "bg-accent" : "bg-accent"}`}
               />
               {isPublished ? "Published" : "Draft"}
             </span>
 
             {article.isFeatured && (
-              <span className="inline-flex items-center gap-1 px-2.5 py-1 text-[11px] font-semibold rounded-full border border-amber-200 bg-amber-50 text-amber-700">
-                <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 text-[11px] font-semibold rounded-full border border-rose bg-cream text-accent">
+                <Star className="w-3 h-3 text-accent text-accent" />
                 Featured
               </span>
             )}
@@ -206,7 +206,7 @@ function SingleArticle() {
           <div className="px-5 md:px-8 py-6">
             {article.category && (
               <div className="mb-3">
-                <span className="inline-flex items-center px-2 py-0.5 text-[10px] font-semibold rounded-full bg-indigo-50 text-indigo-700 border border-indigo-100">
+                <span className="inline-flex items-center px-2 py-0.5 text-[10px] font-semibold rounded-full bg-cream text-secondary border border-rose">
                   {article.category}
                 </span>
               </div>
@@ -283,14 +283,14 @@ function SingleArticle() {
         <div className="flex flex-col sm:flex-row items-center justify-between bg-white border border-slate-200 rounded-xl px-5 py-3 shadow-sm gap-3">
           <button
             onClick={() => navigate("/articles")}
-            className="flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-indigo-600 px-3 py-1.5 rounded-lg hover:bg-slate-50 transition-all cursor-pointer"
+            className="flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-primary px-3 py-1.5 rounded-lg hover:bg-slate-50 transition-all cursor-pointer"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             Back to All Articles
           </button>
           <button
             onClick={() => navigate(`/articles/edit-article/${article.id}`)}
-            className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-3 py-1.5 bg-indigo-600 text-white text-xs font-semibold rounded-lg hover:bg-indigo-700 transition-all cursor-pointer shadow-sm"
+            className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-3 py-1.5 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-secondary transition-all cursor-pointer shadow-sm"
           >
             <ExternalLink className="w-3.5 h-3.5" />
             Edit Article
@@ -301,8 +301,8 @@ function SingleArticle() {
         {article.seo && (
           <div className="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
             <div className="px-5 py-3 border-b border-slate-100 flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-indigo-50 flex items-center justify-center">
-                <FileSearch className="w-3.5 h-3.5 text-indigo-600" />
+              <div className="w-7 h-7 rounded-lg bg-cream flex items-center justify-center">
+                <FileSearch className="w-3.5 h-3.5 text-primary" />
               </div>
               <div>
                 <h3 className="text-xs font-bold text-slate-800">

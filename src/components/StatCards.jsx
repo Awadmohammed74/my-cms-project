@@ -14,33 +14,33 @@ const getCardMeta = (type) => {
       return {
         icon: Archive,
         trendIcon: ArrowUp,
-        iconColor: "text-violet-600",
-        iconBg: "bg-violet-100",
-        trendIconColor: "text-violet-600",
+        iconColor: "text-accent",
+        iconBg: "bg-rose",
+        trendIconColor: "text-accent",
       };
     case "published":
       return {
         icon: CheckCircle,
         trendIcon: Radio,
-        iconColor: "text-emerald-600",
-        iconBg: "bg-emerald-100",
-        trendIconColor: "text-emerald-600",
+        iconColor: "text-accent",
+        iconBg: "bg-rose",
+        trendIconColor: "text-accent",
       };
     case "draft":
       return {
         icon: FileText,
         trendIcon: Clock,
-        iconColor: "text-amber-600",
-        iconBg: "bg-amber-100",
-        trendIconColor: "text-amber-600",
+        iconColor: "text-accent",
+        iconBg: "bg-rose",
+        trendIconColor: "text-accent",
       };
     default:
       return {
         icon: FileText,
         trendIcon: ArrowUp,
-        iconColor: "text-gray-600",
-        iconBg: "bg-gray-100",
-        trendIconColor: "text-gray-600",
+        iconColor: "text-accent",
+        iconBg: "bg-rose",
+        trendIconColor: "text-accent",
       };
   }
 };

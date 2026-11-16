@@ -18,33 +18,33 @@ function Action() {
       label: "Total Articles",
       value: totalArticles,
       icon: FileText,
-      color: "text-indigo-600",
-      bg: "bg-indigo-50",
-      border: "border-indigo-100",
+      color: "text-primary",
+      bg: "bg-cream",
+      border: "border-rose",
     },
     {
       label: "Published",
       value: publishedArticles,
       icon: Eye,
-      color: "text-emerald-600",
-      bg: "bg-emerald-50",
-      border: "border-emerald-100",
+      color: "text-accent",
+      bg: "bg-cream",
+      border: "border-rose",
     },
     {
       label: "Drafts",
       value: draftArticles,
       icon: Clock,
-      color: "text-amber-600",
-      bg: "bg-amber-50",
-      border: "border-amber-100",
+      color: "text-accent",
+      bg: "bg-cream",
+      border: "border-rose",
     },
     {
       label: "Featured",
       value: featuredArticles,
       icon: TrendingUp,
-      color: "text-purple-600",
-      bg: "bg-purple-50",
-      border: "border-purple-100",
+      color: "text-accent",
+      bg: "bg-rose",
+      border: "border-rose",
     },
   ];
 
@@ -53,8 +53,8 @@ function Action() {
       {/* Header */}
       <div className="px-5 py-4 border-b border-slate-100 bg-slate-50/50">
         <div className="flex items-center gap-2.5">
-          <div className="p-1.5 rounded-lg bg-indigo-50">
-            <ArrowUp className="w-4 h-4 text-indigo-600" />
+          <div className="p-1.5 rounded-lg bg-cream">
+            <ArrowUp className="w-4 h-4 text-primary" />
           </div>
           <div>
             <h2 className="text-sm font-bold text-slate-800">

@@ -16,7 +16,7 @@ function ConfirmModal({
   const confirmStyles =
     variant === "danger"
       ? "bg-red-600 hover:bg-red-700 text-white"
-      : "bg-indigo-600 hover:bg-indigo-700 text-white";
+      : "bg-primary hover:bg-secondary text-white";
 
   return createPortal(
     <div className="fixed inset-0 z-[9990] flex items-center justify-center">

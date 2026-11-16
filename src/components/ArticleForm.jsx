@@ -12,18 +12,18 @@ import ConfirmModal from "./ConfirmModal";
 import { useApp } from "../context/AppContext";
 
 const CATEGORY_COLORS = [
-  "bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100",
-  "bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-500/20",
-  "bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100",
-  "bg-emerald-600 text-white border-emerald-600 shadow-lg shadow-emerald-500/20",
-  "bg-purple-50 text-purple-700 border-purple-200 hover:bg-purple-100",
-  "bg-purple-600 text-white border-purple-600 shadow-lg shadow-purple-500/20",
-  "bg-amber-50 text-amber-700 border-amber-200 hover:bg-amber-100",
-  "bg-amber-600 text-white border-amber-600 shadow-lg shadow-amber-500/20",
+  "bg-cream text-accent border-rose hover:bg-rose",
+  "bg-accent text-white border-accent shadow-lg shadow-accent/20",
+  "bg-cream text-accent border-rose hover:bg-rose",
+  "bg-accent text-white border-accent shadow-lg shadow-accent/20",
+  "bg-rose text-accent border-rose hover:bg-rose",
+  "bg-accent text-white border-accent shadow-lg shadow-accent/20",
+  "bg-cream text-accent border-rose hover:bg-rose",
+  "bg-accent text-white border-accent shadow-lg shadow-accent/20",
   "bg-rose-50 text-rose-700 border-rose-200 hover:bg-rose-100",
   "bg-rose-600 text-white border-rose-600 shadow-lg shadow-rose-500/20",
-  "bg-cyan-50 text-cyan-700 border-cyan-200 hover:bg-cyan-100",
-  "bg-cyan-600 text-white border-cyan-600 shadow-lg shadow-cyan-500/20",
+  "bg-cream text-accent border-rose hover:bg-rose",
+  "bg-accent text-white border-accent shadow-lg shadow-accent/20",
 ];
 
 function getCategoryStyle(index, isActive) {
@@ -48,18 +48,18 @@ function ArticleForm({ onPublish, loading, initialData }) {
       : wordCount < 200
         ? {
             label: "Short",
-            color: "bg-amber-100 text-amber-700",
+            color: "bg-rose text-accent",
             width: "w-1/4",
           }
         : wordCount < 800
           ? {
               label: "Medium",
-              color: "bg-blue-100 text-blue-700",
+              color: "bg-rose text-accent",
               width: "w-2/4",
             }
           : {
               label: "Long",
-              color: "bg-emerald-100 text-emerald-700",
+              color: "bg-rose text-accent",
               width: "w-full",
             };
 
@@ -109,8 +109,8 @@ function ArticleForm({ onPublish, loading, initialData }) {
         <form className="space-y-6">
           {/* Header */}
           <div className="flex items-center gap-2.5 pb-4 border-b border-slate-100">
-            <div className="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center">
-              <Sparkles className="w-4 h-4 text-indigo-600" />
+            <div className="w-8 h-8 rounded-lg bg-cream flex items-center justify-center">
+              <Sparkles className="w-4 h-4 text-primary" />
             </div>
             <div>
               <h3 className="text-sm font-bold text-slate-800">
@@ -136,7 +136,7 @@ function ArticleForm({ onPublish, loading, initialData }) {
                 if (validationError) setValidationError("");
               }}
               placeholder="e.g. 10 Must-Know Design Trends in 2026"
-              className={`w-full px-4 py-3 border text-slate-800 placeholder-slate-400 rounded-xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:outline-none transition-all duration-200 text-sm ${
+              className={`w-full px-4 py-3 border text-slate-800 placeholder-slate-400 rounded-xl focus:ring-2 focus:ring-accent/20 focus:border-accent focus:outline-none transition-all duration-200 text-sm ${
                 validationError && !title.trim()
                   ? "border-red-400 bg-red-50"
                   : "border-slate-200 hover:border-slate-300"
@@ -193,7 +193,7 @@ function ArticleForm({ onPublish, loading, initialData }) {
             {content && (
               <div className="w-full h-1 bg-slate-100 rounded-full mb-3 overflow-hidden">
                 <div
-                  className={`h-full rounded-full transition-all duration-500 ${contentLevel?.width || "w-0"} bg-indigo-500`}
+                  className={`h-full rounded-full transition-all duration-500 ${contentLevel?.width || "w-0"} bg-cream0`}
                 />
               </div>
             )}
@@ -205,7 +205,7 @@ function ArticleForm({ onPublish, loading, initialData }) {
                 if (validationError) setValidationError("");
               }}
               placeholder="Start typing your story, insights, or updates here...&#10;&#10;Tip: Use line breaks for paragraphs and keep your content engaging!"
-              className={`w-full px-4 py-3.5 border text-slate-800 placeholder-slate-400 rounded-xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:outline-none resize-y transition-all duration-200 text-sm leading-relaxed min-h-[200px] ${
+              className={`w-full px-4 py-3.5 border text-slate-800 placeholder-slate-400 rounded-xl focus:ring-2 focus:ring-accent/20 focus:border-accent focus:outline-none resize-y transition-all duration-200 text-sm leading-relaxed min-h-[200px] ${
                 validationError && !content.trim()
                   ? "border-red-400 bg-red-50"
                   : "border-slate-200 hover:border-slate-300"
@@ -251,7 +251,7 @@ function ArticleForm({ onPublish, loading, initialData }) {
                   type="button"
                   onClick={(e) => handleSubmit(e, "published")}
                   disabled={loading}
-                  className="flex cursor-pointer items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-xl hover:bg-indigo-700 active:scale-[0.98] transition-all duration-200 shadow-md shadow-indigo-500/10 w-full sm:w-auto"
+                  className="flex cursor-pointer items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-primary text-white text-sm font-semibold rounded-xl hover:bg-secondary active:scale-[0.98] transition-all duration-200 shadow-md shadow-primary/10 w-full sm:w-auto"
                 >
                   {loading ? (
                     <Loader2 className="w-4 h-4 animate-spin" />

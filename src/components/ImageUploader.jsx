@@ -27,8 +27,8 @@ function ImageUploader({ onImageSelect, initialdata }) {
     <div className="w-full bg-white border border-slate-200 rounded-2xl shadow-sm">
       {/* Header */}
       <div className="px-6 py-4 border-b border-slate-100 flex items-center gap-2.5">
-        <div className="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center">
-          <Sparkles className="w-4 h-4 text-indigo-600" />
+        <div className="w-8 h-8 rounded-lg bg-cream flex items-center justify-center">
+          <Sparkles className="w-4 h-4 text-primary" />
         </div>
         <div>
           <h3 className="text-sm font-bold text-slate-800">Featured Image</h3>
@@ -39,16 +39,16 @@ function ImageUploader({ onImageSelect, initialdata }) {
       </div>
 
       <div className="px-6 py-5">
-        <div className="flex justify-center px-4 py-8 border-2 border-dashed rounded-xl transition-all duration-200 bg-slate-50/50 relative group min-h-[200px] items-center hover:border-indigo-400 hover:bg-indigo-50/30 border-slate-200">
+        <div className="flex justify-center px-4 py-8 border-2 border-dashed rounded-xl transition-all duration-200 bg-slate-50/50 relative group min-h-[200px] items-center hover:border-accent hover:bg-cream/30 border-slate-200">
           {!imagePreview ? (
             <div className="space-y-3 text-center w-full">
-              <div className="mx-auto w-14 h-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center group-hover:border-indigo-200 group-hover:shadow-sm transition-all duration-200">
-                <Image className="w-7 h-7 text-slate-400 group-hover:text-indigo-500 transition-colors duration-200" />
+              <div className="mx-auto w-14 h-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center group-hover:border-rose group-hover:shadow-sm transition-all duration-200">
+                <Image className="w-7 h-7 text-slate-400 group-hover:text-accent transition-colors duration-200" />
               </div>
               <div className="flex flex-col items-center gap-1">
                 <label
                   htmlFor="file-upload"
-                  className="relative cursor-pointer font-semibold text-indigo-600 hover:text-indigo-700 transition-colors text-sm"
+                  className="relative cursor-pointer font-semibold text-primary hover:text-secondary transition-colors text-sm"
                 >
                   <span>Click to upload</span>
                   <input

@@ -121,7 +121,7 @@ function EditArticle() {
       <div className="px-4 py-8">
         <div className="flex items-center justify-center py-24 bg-white border border-slate-200 rounded-xl">
           <div className="flex flex-col items-center gap-3">
-            <div className="w-8 h-8 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin" />
+            <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin" />
             <p className="text-sm font-medium text-slate-500">
               Loading article...
             </p>
@@ -155,7 +155,7 @@ function EditArticle() {
         createPortal(
           <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[9990] flex items-center justify-center">
             <div className="bg-white p-6 rounded-xl flex items-center gap-3 shadow-2xl">
-              <div className="w-6 h-6 border-2 border-indigo-600 border-t-transparent rounded-full animate-spin" />
+              <div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin" />
               <p className="font-semibold text-slate-700">{loadingText}</p>
             </div>
           </div>,

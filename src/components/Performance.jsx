@@ -25,40 +25,40 @@ function Performance() {
       label: "Published",
       value: publishedArticles,
       progress: publishedPercent,
-      color: "bg-emerald-500",
-      trackColor: "bg-emerald-100",
+      color: "bg-accent",
+      trackColor: "bg-rose",
       icon: Eye,
-      iconBg: "bg-emerald-50 text-emerald-600",
+      iconBg: "bg-cream text-accent",
       suffix: "",
     },
     {
       label: "Drafts",
       value: draftArticles,
       progress: draftPercent,
-      color: "bg-amber-500",
-      trackColor: "bg-amber-100",
+      color: "bg-accent",
+      trackColor: "bg-rose",
       icon: Clock,
-      iconBg: "bg-amber-50 text-amber-600",
+      iconBg: "bg-cream text-accent",
       suffix: "",
     },
     {
       label: "Featured",
       value: featuredArticles,
       progress: featuredPercent,
-      color: "bg-purple-500",
-      trackColor: "bg-purple-100",
+      color: "bg-accent",
+      trackColor: "bg-rose",
       icon: Star,
-      iconBg: "bg-purple-50 text-purple-600",
+      iconBg: "bg-rose text-accent",
       suffix: "",
     },
     {
       label: "Total Articles",
       value: totalArticles,
       progress: 100,
-      color: "bg-indigo-500",
-      trackColor: "bg-indigo-100",
+      color: "bg-cream0",
+      trackColor: "bg-rose",
       icon: FileText,
-      iconBg: "bg-indigo-50 text-indigo-600",
+      iconBg: "bg-cream text-primary",
       suffix: "",
     },
   ];
@@ -68,8 +68,8 @@ function Performance() {
       {/* Header */}
       <div className="px-5 py-4 border-b border-slate-100 bg-slate-50/50">
         <div className="flex items-center gap-2.5">
-          <div className="p-1.5 rounded-lg bg-indigo-50">
-            <TrendingUp className="w-4 h-4 text-indigo-600" />
+          <div className="p-1.5 rounded-lg bg-cream">
+            <TrendingUp className="w-4 h-4 text-primary" />
           </div>
           <div>
             <h2 className="text-sm font-bold text-slate-800">
@@ -114,10 +114,10 @@ function Performance() {
       </div>
 
       {/* Footer Status */}
-      <div className="px-5 py-3 bg-indigo-50/50 border-t border-indigo-100">
+      <div className="px-5 py-3 bg-cream/50 border-t border-rose">
         <div className="flex items-center justify-center gap-1.5">
-          <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
-          <span className="text-xs font-semibold text-indigo-700">
+          <span className="w-2 h-2 rounded-full bg-cream0 animate-pulse" />
+          <span className="text-xs font-semibold text-secondary">
             {totalArticles} articles in database
           </span>
         </div>

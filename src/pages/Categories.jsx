@@ -15,28 +15,28 @@ import {
 
 const CATEGORY_COLORS = [
   {
-    bg: "bg-blue-50",
-    text: "text-blue-700",
-    border: "border-blue-200",
-    dot: "bg-blue-500",
+    bg: "bg-cream",
+    text: "text-accent",
+    border: "border-rose",
+    dot: "bg-cream0",
   },
   {
-    bg: "bg-emerald-50",
-    text: "text-emerald-700",
-    border: "border-emerald-200",
-    dot: "bg-emerald-500",
+    bg: "bg-cream",
+    text: "text-accent",
+    border: "border-rose",
+    dot: "bg-accent",
   },
   {
-    bg: "bg-purple-50",
-    text: "text-purple-700",
-    border: "border-purple-200",
-    dot: "bg-purple-500",
+    bg: "bg-rose",
+    text: "text-accent",
+    border: "border-rose",
+    dot: "bg-accent",
   },
   {
-    bg: "bg-amber-50",
-    text: "text-amber-700",
-    border: "border-amber-200",
-    dot: "bg-amber-500",
+    bg: "bg-cream",
+    text: "text-accent",
+    border: "border-rose",
+    dot: "bg-accent",
   },
   {
     bg: "bg-rose-50",
@@ -45,22 +45,22 @@ const CATEGORY_COLORS = [
     dot: "bg-rose-500",
   },
   {
-    bg: "bg-cyan-50",
-    text: "text-cyan-700",
-    border: "border-cyan-200",
-    dot: "bg-cyan-500",
+    bg: "bg-cream",
+    text: "text-accent",
+    border: "border-rose",
+    dot: "bg-cream0",
   },
   {
-    bg: "bg-orange-50",
-    text: "text-orange-700",
-    border: "border-orange-200",
-    dot: "bg-orange-500",
+    bg: "bg-cream",
+    text: "text-accent",
+    border: "border-rose",
+    dot: "bg-accent",
   },
   {
-    bg: "bg-teal-50",
-    text: "text-teal-700",
-    border: "border-teal-200",
-    dot: "bg-teal-500",
+    bg: "bg-cream",
+    text: "text-accent",
+    border: "border-rose",
+    dot: "bg-accent",
   },
 ];
 
@@ -129,8 +129,8 @@ function Categories() {
           <div className="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
             <div className="px-6 py-5 border-b border-slate-100 bg-slate-50/50 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center">
-                  <Tags className="w-5 h-5 text-indigo-600" />
+                <div className="w-10 h-10 rounded-xl bg-cream flex items-center justify-center">
+                  <Tags className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <h2 className="text-lg font-bold text-slate-900">
@@ -160,7 +160,7 @@ function Categories() {
                   <button
                     type="button"
                     onClick={handleSeed}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 text-white text-sm font-semibold rounded-xl hover:bg-emerald-700 transition-all cursor-pointer shadow-sm active:scale-[0.98]"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-white text-sm font-semibold rounded-xl hover:bg-accent transition-all cursor-pointer shadow-sm active:scale-[0.98]"
                   >
                     <Sparkles className="w-4 h-4" />
                     Seed Default Categories
@@ -222,8 +222,8 @@ function Categories() {
           {/* Add Category Card */}
           <div className="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
             <div className="px-6 py-4 border-b border-slate-100 flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center">
-                <Sparkles className="w-4 h-4 text-indigo-600" />
+              <div className="w-8 h-8 rounded-lg bg-cream flex items-center justify-center">
+                <Sparkles className="w-4 h-4 text-primary" />
               </div>
               <div>
                 <h3 className="text-sm font-bold text-slate-800">
@@ -247,13 +247,13 @@ function Categories() {
                     value={newCategoryName}
                     onChange={(e) => setNewCategoryName(e.target.value)}
                     placeholder='e.g. "Health", "Gaming", "Sports"...'
-                    className="w-full px-3.5 py-2.5 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:outline-none transition-all text-sm hover:border-slate-300"
+                    className="w-full px-3.5 py-2.5 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl focus:ring-2 focus:ring-accent/20 focus:border-accent focus:outline-none transition-all text-sm hover:border-slate-300"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={!newCategoryName.trim()}
-                  className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-xl hover:bg-indigo-700 transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed shadow-sm active:scale-[0.98]"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-primary text-white text-sm font-semibold rounded-xl hover:bg-secondary transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed shadow-sm active:scale-[0.98]"
                 >
                   <Plus className="w-4 h-4" />
                   Add Category
@@ -295,7 +295,7 @@ function Categories() {
                 <button
                   type="button"
                   onClick={handleSeed}
-                  className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-xl text-xs font-semibold hover:bg-emerald-100 transition-all cursor-pointer mt-2"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-cream text-accent border border-rose rounded-xl text-xs font-semibold hover:bg-rose transition-all cursor-pointer mt-2"
                 >
                   <Sparkles className="w-3.5 h-3.5" />
                   Reset to Defaults
